@@ -1,0 +1,20 @@
+	J.K. Rowling	Harry Potter and the Order of the Phoenix	0439358078
+	J.K. Rowling	Harry Potter and the Half-Blood Prince	0439785960
+	J.K. Rowling	Harry Potter and the Chamber of Secrets	0439064864
+	Charles Dickens	David Copperfield	0140439447
+	Charles Dickens	Oliver Twist	0141439742
+	J.K. Rowling	Harry Potter and the Prisoner of Azkaban	0439136350
+	J.K. Rowling	Harry Potter and the Goblet of Fire	0439139597
+	J.K. Rowling	Harry Potter and the Deathly Hallows	0545010225
+	Harper Lee	To Kill a Mockingbird	0446310786
+	Maya Angelou	I Know Why the Caged Bird Sings	0553279378
+	Maya Angelou	Wouldn't Take Nothing For My Journey Now	0553569074
+	Stieg Larsson	The Girl with the Dragon Tattoo	0307454541
+	Stieg Larsson	The Girl Who Played with Fire	030745455X
+	Stieg Larsson	The Girl Who Kicked the Hornet's Nest	030726999X
+	J.D. Salinger	The Catcher in the Rye	0316769177
+	Dan Brown	The Da Vinci Code	0385504209
+	Markus Zusak	The Book Thief	0375842209
+	Umberto Eco	Name of the Rose	0156001314
+	George Orwell	Animal Farm	0451526341
+

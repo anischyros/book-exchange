@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Booklover's Club Book Exchange</title>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <script src="login.js"></script>
+	<script src="myOffers.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
+
+</head>
+<body>
+<div class="container">
+	<div id="top-panel" class="well">
+		<div class="row">
+			<div class="col-md-3">
+	<% if (!loggedIn) 
+	   { %>
+				<a href="javascript:doLogin()" id="login-link">Login</a><br />
+				<a href="javascript:doCreateNewLogin()" 
+					id="create-new-login-link">Create new login</a>
+	<% }
+	   else
+	   { %>
+				<span id="welcome-text">Welcome, <%= login %></span><br />
+		        <a href="/logout" id="logout-link">Logout</a>
+	<% } %>
+			</div>
+			<div class="col-md-3"></div>
+			<div class="col-md-3">
+	<% if (loggedIn)
+	   { %>
+				<a href="/ViewAllBooks">View all books</a></br>
+				<a href="/ViewMyBooks">View my books</a>
+	<% } %>
+			</div>
+			<div class="col-md-3">
+	<% if (loggedIn)
+	   { %>
+				<a href="/ViewMyAcceptedOffers">View my accepted offers
+					</a><br />
+				<a href="/ViewOtherTradeOffers">View others' trade offers
+					</a>
+	<% } %>
+			</div>
+		</div>
+	</div>
+
+    <h2 class="text-center">Booklover's Club Book Exchange</h2>
+	<h3 class="text-center">Viewing My Offers</h3>
+
+	<div id="book-images">
+<% for (var i = 0; i < books.length; i++)
+   { %>
+		<a href="javascript:doRemoveOffer('<%= books[i]._id %>',
+			'<%= addSlashes(books[i].title) %>', 
+			'<%= addSlashes(books[i].author) %>')">
+			<img src="/getBookCover?id=<%= books[i]._id %>" width="100px"
+				title="<%= books[i].title + " by " + books[i].author %>" />
+		</a>
+<% } %>
+	</div>
+
+</div>
+</body>
+</html>
+<%
+function addSlashes(s)
+{
+    return (s + '').replace(/[\\"']/g, '\\$&').replace(/\u0000/g, '\\0');
+}
+%>
+

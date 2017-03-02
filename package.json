@@ -1,0 +1,27 @@
+{
+  "name": "book-exchange",
+  "version": "1.0.0",
+  "description": "FreeCodeCamp book exchange project implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodejs index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anischyros/book-exchange.git"
+  },
+  "author": "Bob Sutton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anischyros/book-exchange/issues"
+  },
+  "homepage": "https://github.com/anischyros/book-exchange#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "cookie-session": "^2.0.0-beta.1",
+    "ejs": "^2.5.6",
+    "express": "^4.15.0",
+    "mongodb": "^2.2.24",
+    "request": "^2.79.0"
+  }
+}

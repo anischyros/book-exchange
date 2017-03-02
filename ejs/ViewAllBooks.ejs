@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Booklover's Club Book Exchange</title>
+    <meta charset="UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+    <script src="login.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css" />
+
+</head>
+<body>
+<div class="container">
+<div id="top-panel" class="well">
+	<div class="row">
+		<div class="col-md-3">
+<% if (!loggedIn) 
+   { %>
+			<a href="javascript:doLogin()" id="login-link">Login</a><br />
+			<a href="javascript:doCreateNewLogin()" 
+				id="create-new-login-link">Create new login</a>
+<% }
+   else
+   { %>
+			<span id="welcome-text">Welcome, <%= login %></span><br />
+	        <a href="/logout" id="logout-link">Logout</a>
+<% } %>
+		</div>
+		<div class="col-md-3"></div>
+		<div class="col-md-3">
+<% if (loggedIn)
+   { %>
+			<a href="/ViewMyBooks">View my books</a><br />
+			<a href="/ViewMyTradeOffers">View my trade offers</a>
+<% } %>
+		</div>
+		<div class="col-md-3">
+<% if (loggedIn)
+   { %>
+            <a href="/ViewMyAcceptedOffers">View my accepted offers</a><br />
+			<a href="/ViewOtherTradeOffers">View others' trade offers</a>
+<% } %>
+		</div>
+	</div>
+</div>
+
+    <h2 class="text-center">Booklover's Club Book Exchange</h2>
+	<h3 class="text-center">Viewing Books from All Members</h3>
+
+    <div id="book-images">
+<% for (var i = 0; i < books.length; i++)
+   { %>
+        <img src="/getBookCover?id=<%= books[i]._id %>" width="100px"
+            title="<%= books[i].title + ' by ' + books[i].author %>" />
+<% } %>
+    </div>
+
+    <div id="new-login-form" title="Create new login" style="display: none">
+        <p>All form fields are required:</p>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label for="login">Login name</label>
+                    </td>
+                    <td>
+                        <input id="new-login-field" type="text" name="login" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="name">Real name</label>
+                    </td>
+                    <td>
+                        <input id="name-field" type="text" name="name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="location">Where</label>
+                    </td>
+                    <td>
+                        <input id="location-field" type="text" 
+                            name="location" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email-address-field">E-mail address</label>
+                    </td>
+                    <td>
+                        <input id="email-address-field" type="text"
+                            name="email-address" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="new-password-field">Password</label>
+                    </td>
+                    <td>
+                        <input id="new-password-field" type="password" 
+                            name="password" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div id="login-form" title="Login" style="display: none">
+        <p>Enter your credentials:</p>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        <label for="login">Login name</label>
+                    </td>
+                    <td>
+                        <input id="login-field" type="text" name="login" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password</label>
+                    </td>
+                    <td>
+                        <input id="password-field" type="password" 
+                            name="password" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+</html>
